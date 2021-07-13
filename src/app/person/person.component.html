@@ -1,0 +1,25 @@
+<div *ngIf="!delete" class="main">
+  <h1>Hello my name {{person.lastName}} {{person.firstName}}</h1>
+  <h2>I am {{person.age}}</h2>
+
+  <div [ngSwitch]="person.selectWork">
+    <p *ngSwitchCase="'pirat'">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      Enim expedita quam ex, quos accusamus ipsum? Sint vel,
+      esse perspiciatis qui at nulla quos unde vitae tenetur
+      deserunt velit ipsa distinctio?
+    </p>
+    <p *ngSwitchCase="'police'">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Aspernatur, reprehenderit fugit atque quos ullam nesciunt unde quo
+      libero nobis iste nulla ipsum laudantium molestias praesentium.
+    </p>
+    <p *ngSwitchCase="'teacher'">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      Voluptatum, illo voluptate! Quaerat, harum. Earum maxime
+      vero reiciendis eligendi, corrupti a!
+    </p>
+  </div>
+
+  <button (click)="onDelete()">Delete</button>
+</div>
