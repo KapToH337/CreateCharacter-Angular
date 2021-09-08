@@ -1,65 +1,67 @@
-<div class="main">
-  <div>
-    <h1>Create ur character</h1>
-
+<div class="all">
+  <div class="main">
     <div>
-      <h2>Your character</h2>
-
+      <h1>Create ur character</h1>
+  
       <div>
+        <h2>Your character</h2>
+  
         <div>
-          <p>Your firstname</p>
-          <input type="text" [(ngModel)]="firstName" placeholder="Peter">
-        </div>
-
-        <div>
-          <p>Your lastname</p>
-          <input type="text" [(ngModel)]="lastName" placeholder="Talmbers">
-        </div>
-
-        <div>
-          <p>Your age</p>
-          <input type="number" [(ngModel)]="age" placeholder="24">
+          <div>
+            <p>Your firstname</p>
+            <input type="text" [(ngModel)]="firstName" placeholder="Peter">
+          </div>
+  
+          <div>
+            <p>Your lastname</p>
+            <input type="text" [(ngModel)]="lastName" placeholder="Talmbers">
+          </div>
+  
+          <div>
+            <p>Your age</p>
+            <input type="number" [(ngModel)]="age" placeholder="24">
+          </div>
         </div>
       </div>
-    </div>
-
-    <div>
-      <h2>Your description</h2>
-
+  
       <div>
-        <label for="emj">Are you?</label>
-        <select
-          id="emj"
-          name="emoj"
-          [value]="''"
-          [(ngModel)]="selectEmoj"
-        >
-          <option value="good">Good</option>
-          <option value="angry">Angry</option>
-          <option value="uncertain">Uncertain</option>
-        </select>
-
-        <br><br>
-
-        <label for="work">Yor work</label>
-        <select
-          id="work"
-          name="work"
-          [value]="''"
-          [(ngModel)]="selectWork"
-        >
-          <option value="pirat">Pirat</option>
-          <option value="police">Police</option>
-          <option value="teacher">Teacher</option>
-        </select>
+        <h2>Your description</h2>
+  
+        <div>
+          <label for="emj">Are you?</label>
+          <select
+            id="emj"
+            name="emoj"
+            [value]="''"
+            [(ngModel)]="selectEmoj"
+          >
+            <option value="good">Good</option>
+            <option value="angry">Angry</option>
+            <option value="uncertain">Uncertain</option>
+          </select>
+  
+          <br><br>
+  
+          <label for="work">Yor work</label>
+          <select
+            id="work"
+            name="work"
+            [value]="''"
+            [(ngModel)]="selectWork"
+          >
+            <option value="pirat">Pirat</option>
+            <option value="police">Police</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
       </div>
+  
+      <br>
+  
+      <button (click)="onReady()">My character ready</button>
     </div>
-
-    <br>
-
-    <button (click)="onReady()">My character ready</button>
   </div>
-
+  
   <div class="main2">
     <app-person
       *ngFor="let person of persons"

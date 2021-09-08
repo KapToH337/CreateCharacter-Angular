@@ -1,4 +1,14 @@
+.all {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .main {
+  position: sticky;
+  top: 0;
+  left: 0;
+
   display: flex;
   flex-direction: row;
 

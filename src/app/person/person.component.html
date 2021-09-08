@@ -1,24 +1,41 @@
 <div *ngIf="!delete" class="main">
-  <h1>Hello my name {{person.lastName}} {{person.firstName}}</h1>
-  <h2>I am {{person.age}}</h2>
+  <h1>Привет моё имя {{person.lastName}} {{person.firstName}}</h1>
+  <h2>Мне {{person.age}}</h2>
 
   <div [ngSwitch]="person.selectWork">
-    <p *ngSwitchCase="'pirat'">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-      Enim expedita quam ex, quos accusamus ipsum? Sint vel,
-      esse perspiciatis qui at nulla quos unde vitae tenetur
-      deserunt velit ipsa distinctio?
-    </p>
-    <p *ngSwitchCase="'police'">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Aspernatur, reprehenderit fugit atque quos ullam nesciunt unde quo
-      libero nobis iste nulla ipsum laudantium molestias praesentium.
-    </p>
-    <p *ngSwitchCase="'teacher'">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-      Voluptatum, illo voluptate! Quaerat, harum. Earum maxime
-      vero reiciendis eligendi, corrupti a!
-    </p>
+    <div *ngSwitchCase="'pirat'" [ngSwitch]="person.selectEmoj">
+      <p
+        *ngSwitchCase="'good'">Я хороший пират {{person.lastName}} {{person.firstName}} и мне весело со своими товарищами, арррр
+      </p>
+      <p
+        *ngSwitchCase="'angry'">Я плохой пират {{person.lastName}} {{person.firstName}} и у меня болит попа от морских приключений, арррр
+      </p>
+      <p
+        *ngSwitchCase="'uncertain'">Я неуверенный пират {{person.lastName}} {{person.firstName}} и я наверное лучший пират, хех аррррр
+      </p>
+    </div>
+    <div *ngSwitchCase="'police'" [ngSwitch]="person.selectEmoj">
+      <p
+        *ngSwitchCase="'good'">Я хороший полицейский {{person.lastName}} {{person.firstName}} и я ловю приступников
+      </p>
+      <p
+        *ngSwitchCase="'angry'">Я плохой полицейский {{person.lastName}} {{person.firstName}} и я прикрываю финансовые схемы и махинации
+      </p>
+      <p
+        *ngSwitchCase="'uncertain'">Я неуверенный полицейский {{person.lastName}} {{person.firstName}} я д-д-думаю что споймаю всех приступеиков
+      </p>
+    </div>
+    <div *ngSwitchCase="'teacher'" [ngSwitch]="person.selectEmoj">
+      <p
+        *ngSwitchCase="'good'">Я хороший учитель {{person.lastName}} {{person.firstName}} и я люблю учить детей
+      </p>
+      <p
+        *ngSwitchCase="'angry'">Я плохой учитель {{person.lastName}} {{person.firstName}} и я ненавижу детей
+      </p>
+      <p
+        *ngSwitchCase="'uncertain'">Я неуверенный учитель {{person.lastName}} {{person.firstName}} я надеюсь что обучу детей математике
+      </p>
+    </div>
   </div>
 
   <button (click)="onDelete()">Delete</button>
